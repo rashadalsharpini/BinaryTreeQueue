@@ -28,14 +28,19 @@ int main() {
 
     cout << "Iterative Preorder: " << flush;
     bt.iterativePreorder();
+    cout << endl;
 
     cout << "Iterative Inorder: " << flush;
     bt.iterativeInorder();
+    cout << endl;
 
     cout << "Iterative Postorder: " << flush;
     bt.iterativePostorder();
+    cout << endl;
 
     cout << "Iterative Levelorder: " << flush;
     bt.iterativeLevelorder();
+    cout << endl;
+
     return 0;
 }
