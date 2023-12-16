@@ -167,3 +167,21 @@ void Tree::iterativePostorder(Node *p) {
     }
     cout << endl;
 }
+
+void Tree::iterativeLevelorder(Node *p) {
+    queue<Node*>q;
+    cout<<p->data;
+    q.push(p);
+    while(!q.empty()){
+        p=q.front();
+        q.pop();
+        if(p->lchild){
+            cout<<p->lchild->data;
+            q.push(p->lchild);
+        }
+        if(p->rchild) {
+            cout << p->rchild->data;
+            q.push(p->lchild);
+        }
+    }
+}
