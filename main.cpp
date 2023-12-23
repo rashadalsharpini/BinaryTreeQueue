@@ -3,9 +3,12 @@
 using namespace std;
 int main() {
 
-    Tree<int> bt;
+    Tree bt;
 
-    bt.CreateTree();
+//    bt.CreateTree();
+    for (int i = 0; i < 10; ++i) {
+        bt.insert(i);
+    }
     cout << endl;
 
     cout << "Preorder: " << flush;
@@ -42,5 +45,6 @@ int main() {
     bt.iterativeLevelorder();
     cout << endl;
 
+    cout<<"\n\nNo Run Time Error"<<endl;
     return 0;
 }

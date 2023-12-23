@@ -3,28 +3,28 @@
 //
 
 #include "Tree.h"
-template class Tree<int>;
-template class Tree<double>;
-template class Tree<string>;
-template class Tree<float>;
-template class Tree<char>;
-template class Tree<bool>;
-template <typename T>
-Tree<T>::Tree() {
+//template class Tree<int>;
+//template class Tree<double>;
+//template class Tree<string>;
+//template class Tree<float>;
+//template class Tree<char>;
+//template class Tree<bool>;
+
+Tree::Tree() {
     root = nullptr;
 }
-template <typename T>
-Tree<T>::~Tree() {
+
+Tree::~Tree() {
     // TODO
 }
-template <typename T>
-void Tree<T>::CreateTree() {
-    Node<T>* p;
-    Node<T>* t;
-    int x;
-    queue<Node<T>*> q;
 
-    root = new Node<T>;
+void Tree::CreateTree() {
+    Node* p;
+    Node* t;
+    int x;
+    queue<Node*> q;
+
+    root = new Node;
     cout << "Enter root data: " << flush;
     cin >> x;
     root->data = x;
@@ -39,7 +39,7 @@ void Tree<T>::CreateTree() {
         cout << "Enter left child data of " << p->data << ": " << flush;
         cin >> x;
         if (x != -1){
-            t = new Node<T>;
+            t = new Node;
             t->data = x;
             t->lchild = nullptr;
             t->rchild = nullptr;
@@ -50,7 +50,7 @@ void Tree<T>::CreateTree() {
         cout << "Enter right child data of " << p->data << ": " << flush;
         cin >> x;
         if (x != -1){
-            t = new Node<T>;
+            t = new Node;
             t->data = x;
             t->lchild = nullptr;
             t->rchild = nullptr;
@@ -59,33 +59,33 @@ void Tree<T>::CreateTree() {
         }
     }
 }
-template <typename T>
-void Tree<T>::Preorder(Node <T>*p) {
+
+void Tree::Preorder(Node *p) {
     if (p){
         cout << p->data << ", " << flush;
         Preorder(p->lchild);
         Preorder(p->rchild);
     }
 }
-template <typename T>
-void Tree<T>::Inorder(Node<T> *p) {
+
+void Tree::Inorder(Node *p) {
     if (p){
         Inorder(p->lchild);
         cout << p->data << ", " << flush;
         Inorder(p->rchild);
     }
 }
-template <typename T>
-void Tree<T>::Postorder(Node<T> *p) {
+
+void Tree::Postorder(Node *p) {
     if (p){
         Postorder(p->lchild);
         Postorder(p->rchild);
         cout << p->data << ", " << flush;
     }
 }
-template <typename T>
-void Tree<T>::Levelorder(Node<T> *p) {
-    queue<Node<T>*> q;
+
+void Tree::Levelorder(Node *p) {
+    queue<Node*> q;
     cout << root->data << ", " << flush;
     q.emplace(root);
 
@@ -104,8 +104,8 @@ void Tree<T>::Levelorder(Node<T> *p) {
         }
     }
 }
-template <typename T>
-int Tree<T>::Height(Node<T> *p) {
+
+int Tree::Height(Node *p) {
     int l = 0;
     int r = 0;
     if (p == nullptr){
@@ -121,9 +121,9 @@ int Tree<T>::Height(Node<T> *p) {
         return r + 1;
     }
 }
-template <typename T>
-void Tree<T>::iterativePreorder(Node<T> *p) {
-    stack<Node<T>*> stk;
+
+void Tree::iterativePreorder(Node *p) {
+    stack<Node*> stk;
     while (p != nullptr || ! stk.empty()){
         if (p != nullptr){
             cout << p->data << ", " << flush;
@@ -137,9 +137,9 @@ void Tree<T>::iterativePreorder(Node<T> *p) {
     }
     cout << endl;
 }
-template <typename T>
-void Tree<T>::iterativeInorder(Node<T> *p) {
-    stack<Node<T>*> stk;
+
+void Tree::iterativeInorder(Node *p) {
+    stack<Node*> stk;
     while (p != nullptr || ! stk.empty()){
         if (p != nullptr){
             stk.emplace(p);
@@ -153,8 +153,8 @@ void Tree<T>::iterativeInorder(Node<T> *p) {
     }
     cout << endl;
 }
-template <typename T>
-void Tree<T>::iterativePostorder(Node<T> *p) {
+
+void Tree::iterativePostorder(Node *p) {
     stack<long int> stk;
     long int temp;
     while (p != nullptr || ! stk.empty()){
@@ -166,18 +166,18 @@ void Tree<T>::iterativePostorder(Node<T> *p) {
             stk.pop();
             if (temp > 0){
                 stk.emplace(-temp);
-                p = ((Node<T>*)temp)->rchild;
+                p = ((Node*)temp)->rchild;
             } else {
-                cout << ((Node<T>*)(-1 * temp))->data << ", " << flush;
+                cout << ((Node*)(-1 * temp))->data << ", " << flush;
                 p = nullptr;
             }
         }
     }
     cout << endl;
 }
-template <typename T>
-void Tree<T>::iterativeLevelorder(Node<T> *p) {
-    queue<Node<T>*>q;
+
+void Tree::iterativeLevelorder(Node *p) {
+    queue<Node*>q;
     cout<<p->data;
     q.push(p);
     while(!q.empty()){
@@ -192,4 +192,30 @@ void Tree<T>::iterativeLevelorder(Node<T> *p) {
             q.push(p->lchild);
         }
     }
+}
+
+void Tree::insert(int key) {
+    Node*t =root;
+    Node*r,*p;
+    if(root== nullptr) {
+        p = new Node ;
+        p->data=key;
+        p->lchild=p->rchild= nullptr;
+        root=p;
+        return;
+    }
+    while(t!= nullptr){
+        r=t;
+        if(key<t->data)
+            t=t->lchild;
+        else if(key>t->data)
+            t=t->rchild;
+        else
+            return;
+    }
+    p = new Node ;
+    p->data=key;
+    p->lchild=p->rchild=nullptr;
+    if(key<r->data) r->lchild=p;
+    else r->rchild=p;
 }
