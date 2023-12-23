@@ -8,38 +8,38 @@
 #include <queue>
 #include <stack>
 using namespace std;
-
+template <typename T>
 class Node{
 public:
     Node* lchild;
-    int data;
+    T data;
     Node* rchild;
 };
-
+template <typename T>
 class Tree{
 private:
-    Node* root;
+    Node<T>* root;
 public:
     Tree();
     ~Tree();
     void CreateTree();
-    void Preorder(Node* p);
+    void Preorder(Node<T>* p);
     void Preorder() { Preorder(root); }  // Passing Private Parameter in Constructor
-    void Inorder(Node* p);
+    void Inorder(Node<T>* p);
     void Inorder() { Inorder(root); }
-    void Postorder(Node* p);
+    void Postorder(Node<T>* p);
     void Postorder() { Postorder(root); }
-    void Levelorder(Node* p);
+    void Levelorder(Node<T>* p);
     void Levelorder() { Levelorder(root); }
-    int Height(Node* p);
+    int Height(Node<T>* p);
     int Height() { return Height(root); }
-    void iterativePreorder(Node* p);
+    void iterativePreorder(Node<T>* p);
     void iterativePreorder() { iterativePreorder(root); }
-    void iterativeInorder(Node* p);
+    void iterativeInorder(Node<T>* p);
     void iterativeInorder() { iterativeInorder(root); }
-    void iterativePostorder(Node* p);
+    void iterativePostorder(Node<T>* p);
     void iterativePostorder() { iterativePostorder(root); }
-    void iterativeLevelorder(Node *p);
+    void iterativeLevelorder(Node<T> *p);
     void iterativeLevelorder() { iterativeLevelorder(root); }
 
 };

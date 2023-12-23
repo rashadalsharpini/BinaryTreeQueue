@@ -3,7 +3,7 @@
 using namespace std;
 int main() {
 
-    Tree bt;
+    Tree<int> bt;
 
     bt.CreateTree();
     cout << endl;

@@ -1,10 +1,7 @@
 # ninja log v5
-6	33	1702463105649386273	CMakeFiles/BinaryTreeQueue.dir/Node.cpp.o	7e160d0efeca4b3b
-454	543	1702486439634941419	BinaryTreeQueue	823d3ad956985f92
-1	19	1702486421837858371	CMakeFiles/BinaryTreeQueue.dir/Queue.cpp.o	2ff7539c7c78e06e
-0	454	1702486439544939314	CMakeFiles/BinaryTreeQueue.dir/main.cpp.o	c6e79f261a8c0bb8
-1	494	1702563035006918534	CMakeFiles/BinaryTreeQueue.dir/main.cpp.o	c6e79f261a8c0bb8
-3	551	1702563035063571914	CMakeFiles/BinaryTreeQueue.dir/Tree.cpp.o	313b302adb5a1460
-551	639	1702563035150218259	BinaryTreeQueue	2c13dba06692bf5
 0	579	1702567905476859764	CMakeFiles/BinaryTreeQueue.dir/Tree.cpp.o	313b302adb5a1460
 579	658	1702567905556860026	BinaryTreeQueue	2c13dba06692bf5
+1	494	1702563035006918534	CMakeFiles/BinaryTreeQueue.dir/main.cpp.o	c6e79f261a8c0bb8
+0	477	1703349340872276593	CMakeFiles/BinaryTreeQueue.dir/main.cpp.o	c6e79f261a8c0bb8
+1	1156	1703349341552279574	CMakeFiles/BinaryTreeQueue.dir/Tree.cpp.o	313b302adb5a1460
+1156	1297	1703349341692280188	BinaryTreeQueue	7ffda6b7b3f78a
