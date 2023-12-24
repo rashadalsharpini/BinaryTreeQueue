@@ -41,6 +41,7 @@ public:
     void iterativeLevelorder(Node *p);
     void iterativeLevelorder() { iterativeLevelorder(root); }
     void insert(int key);
+    Node*search(int key);
 
 };
 

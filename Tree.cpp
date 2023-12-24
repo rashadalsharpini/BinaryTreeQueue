@@ -219,3 +219,16 @@ void Tree::insert(int key) {
     if(key<r->data) r->lchild=p;
     else r->rchild=p;
 }
+
+Node *Tree::search(int key) {
+    Node*t=root;
+    while(t!= nullptr){
+        if(key==t->data)
+            return t;
+        else if(key<t->data)
+            t=t->lchild;
+        else
+            t=t->rchild;
+    }
+    return nullptr;
+}

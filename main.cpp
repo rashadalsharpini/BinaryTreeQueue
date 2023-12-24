@@ -7,7 +7,8 @@ int main() {
 
 //    bt.CreateTree();
     for (int i = 0; i < 10; ++i) {
-        bt.insert(i);
+        int x;cin>>x;
+        bt.insert(x);
     }
     cout << endl;
 
@@ -29,21 +30,21 @@ int main() {
 
     cout << "Height: " << bt.Height() << endl;
 
-    cout << "Iterative Preorder: " << flush;
-    bt.iterativePreorder();
-    cout << endl;
-
-    cout << "Iterative Inorder: " << flush;
-    bt.iterativeInorder();
-    cout << endl;
-
-    cout << "Iterative Postorder: " << flush;
-    bt.iterativePostorder();
-    cout << endl;
-
-    cout << "Iterative Levelorder: " << flush;
-    bt.iterativeLevelorder();
-    cout << endl;
+//    cout << "Iterative Preorder: " << flush;
+//    bt.iterativePreorder();
+//    cout << endl;
+//
+//    cout << "Iterative Inorder: " << flush;
+//    bt.iterativeInorder();
+//    cout << endl;
+//
+//    cout << "Iterative Postorder: " << flush;
+//    bt.iterativePostorder();
+//    cout << endl;
+//
+//    cout << "Iterative Levelorder: " << flush;
+//    bt.iterativeLevelorder();
+//    cout << endl;
 
     cout<<"\n\nNo Run Time Error"<<endl;
     return 0;
