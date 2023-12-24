@@ -1,4 +1,4 @@
-1. they are only working the CreateTree function
+1. they are only working with the CreateTree function
 ``` cpp
 void iterativePreorder() { iterativePreorder(root); }  
 void iterativeInorder(Node* p);  
